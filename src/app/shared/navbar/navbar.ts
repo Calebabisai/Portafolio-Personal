@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ThemeToggle } from "../../components/theme-toggle/theme-toggle";
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [ThemeToggle],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })

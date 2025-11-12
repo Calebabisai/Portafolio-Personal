@@ -1,10 +1,19 @@
 <div class="bg-white text-black dark:bg-zinc-900 dark:text-white transition-colors duration-500 min-h-screen flex flex-col">
 
+  <!-- Navbar desplazable junto con tu scroll -->
   <app-navbar></app-navbar>
 
+
+ 
   <main class="flex-grow">
-    <router-outlet></router-outlet>
+    
+    <app-home></app-home>
+    <app-about></app-about>
+    <app-projects></app-projects>
+    <app-skills></app-skills>
+    <app-contact></app-contact>
   </main>
 
+  <!-- Footer FIJO -->
   <app-footer></app-footer>
 </div>
