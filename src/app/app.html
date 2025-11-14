@@ -1,19 +1,33 @@
 <div class="bg-white text-black dark:bg-zinc-900 dark:text-white transition-colors duration-500 min-h-screen flex flex-col">
 
-  <!-- Navbar desplazable junto con tu scroll -->
+  <!-- Navbar fijo (sticky) -->
   <app-navbar></app-navbar>
 
-
- 
+  <!-- Main content con IDs para navegación -->
   <main class="flex-grow">
     
-    <app-home></app-home>
-    <app-about></app-about>
-    <app-projects></app-projects>
-    <app-skills></app-skills>
-    <app-contact></app-contact>
+    <section id="home">
+      <app-home></app-home>
+    </section>
+
+    <section id="about">
+      <app-about></app-about>
+    </section>
+
+    <section id="projects">
+      <app-projects></app-projects>
+    </section>
+
+    <section id="skills">
+      <app-skills></app-skills>
+    </section>
+
+    <section id="contact">
+      <app-contact></app-contact>
+    </section>
+
   </main>
 
-  <!-- Footer FIJO -->
+  <!-- Footer -->
   <app-footer></app-footer>
 </div>
