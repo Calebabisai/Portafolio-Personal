@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --base-href=/Portafolio-Personal/ && npx angular-cli-ghpages --dir=dist/portafolio-personal/browser"
   },
   "prettier": {
     "printWidth": 100,
@@ -39,6 +40,7 @@
     "@angular/compiler-cli": "^20.3.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/jasmine": "~5.1.0",
+    "angular-cli-ghpages": "^2.0.3",
     "autoprefixer": "^10.4.22",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
