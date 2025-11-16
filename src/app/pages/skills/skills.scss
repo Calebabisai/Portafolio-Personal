@@ -1,15 +1,16 @@
-/* Animación de scroll infinito */
+/* Animación de scroll infinito fluida */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-100% / 3));
   }
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 45s linear infinite;
+  will-change: transform;
 }
 
 /* Pausa la animación al hacer hover */
