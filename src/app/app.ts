@@ -2,10 +2,12 @@ import { Component, signal } from '@angular/core';
 import { Navbar } from "./shared/navbar/navbar";
 import { Footer } from "./shared/footer/footer";
 import { Contact } from "./pages/contact/contact";
+import { Courses } from './pages/courses/courses';
 import { Skills } from "./pages/skills/skills";
 import { Projects } from "./pages/projects/projects";
 import { About } from "./pages/about/about";
 import { Home } from "./pages/home/home";
+
 
 /**
  * Componente raíz de la aplicación.
@@ -39,9 +41,11 @@ import { Home } from "./pages/home/home";
     Home,
     About,
     Projects,
+    Courses,
     Skills,
-    Contact
-  ],
+    Contact,
+    
+],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

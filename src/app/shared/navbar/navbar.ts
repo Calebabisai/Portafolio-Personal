@@ -69,6 +69,7 @@ export class Navbar {
     { id: 'home', label: 'Inicio' },
     { id: 'about', label: 'Sobre mí' },
     { id: 'projects', label: 'Proyectos' },
+    { id: 'courses', label: 'Cursos'},
     { id: 'skills', label: 'Habilidades' },
     { id: 'contact', label: 'Contacto' }
   ];

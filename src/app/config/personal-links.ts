@@ -13,7 +13,7 @@ export const PERSONAL_LINKS = {
   
   email: 'gelndcaleb@gmail.com',
   telefono: '+52-2299570625',
-  whatsapp: 'https://wa.me/522299570625',  // Link directo a WhatsApp
+  whatsapp: 'https://wa.me/522299570625',  
   
   
   // PROYECTOS - DEMOS Y REPOSITORIOS
@@ -53,14 +53,14 @@ export const PERSONAL_LINKS = {
       instructor: 'Federico Garay, Maximilian Schwarzmüller',
       image: '/assets/courses/Angular-curso.png',  
       certificateUrl: 'https://www.udemy.com/certificate/UC-a8291a0d-a572-401f-bc98-919173e69913/?utm_campaign=email&utm_medium=email&utm_source=sendgrid.com',
-      period: undefined
+      period: '2025'
     },
     {
-      title: 'TypeScript sin fronteras',
+      title: 'TypeScript sin fronteras: Guia definitiva',
       instructor: 'Nicolas Schurmann',
       image: '/assets/courses/Typescript-curso.png', 
       certificateUrl: 'https://www.udemy.com/certificate/UC-5b6f62dd-cea8-4da8-a217-7204e3e4dfad/?utm_campaign=email&utm_medium=email&utm_source=sendgrid.com',
-      period: undefined
+      period: '2025'
     },
   ],
 } as const;

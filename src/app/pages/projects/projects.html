@@ -155,58 +155,5 @@
         Ver todos los proyectos en GitHub
       </a>
     </div>
-
-    <!-- Sección de Cursos -->
-    <div class="mt-24">
-      <div class="text-center mb-16">
-        <h3 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          Cursos
-        </h3>
-        <p class="text-gray-600 dark:text-gray-400 text-lg">
-          Certificaciones y formación continua
-        </p>
-      </div>
-
-      <!-- Grid de cursos -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        @for (course of links.courses; track course.title) {
-          <div class="group bg-white dark:bg-zinc-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-            <!-- Imagen del curso -->
-            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
-              <img [src]="course.image" [alt]="course.title" 
-                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                   onerror="this.src='https://via.placeholder.com/400x200?text=Curso'">
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
-            </div>
-
-            <!-- Contenido -->
-            <div class="p-6 space-y-4">
-              <h4 class="text-2xl font-bold text-gray-900 dark:text-white line-clamp-2 min-h-[56px]">
-                {{ course.title }}
-              </h4>
-              <p class="text-gray-600 dark:text-gray-400">
-                {{ course.instructor }}
-              </p>
-              
-              @if (course.period) {
-                <p class="text-sm text-blue-600 dark:text-blue-400 font-semibold">
-                  {{ course.period }}
-                </p>
-              }
-
-              <!-- Botón del certificado -->
-              <div class="pt-4">
-                <a [href]="course.certificateUrl" target="_blank"
-                   class="block w-full text-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                  Ver Certificado
-                </a>
-              </div>
-            </div>
-          </div>
-        }
-      </div>
-    </div>
-
   </div>
-
 </div>
