@@ -29,10 +29,25 @@ export const PERSONAL_LINKS = {
       demo: 'https://play.google.com/store/apps/details?id=com.imaginetz.geopoint&hl=es_MX',     
       github: 'https://github.com/Calebabisai/GeoPoint', 
     },
-    // Proyecto 3: Shopping List
+    // Proyecto 3: Catalogo de Peliculas
     project3: {
-      demo: 'https://tu-weather-demo.vercel.app',        
+      demo: 'https://catalogopeliculascaleb.netlify.app/',        
+      github: 'https://github.com/Calebabisai/catalogo-peliculas',    
+    },
+    //Proyecto 4: Shopping List
+    project4: {
+      demo: 'https://shoppinglistcaleb.netlify.app/',        
       github: 'https://github.com/Calebabisai/shopping-list-app',    
+    },
+    //Proyecto 5: Todo list con usuarios
+    project5: {
+      demo: 'https://todolistappcaleb.netlify.app/',        
+      github: 'https://github.com/Calebabisai/tareas-con-usuarios-app',    
+    },
+    //Proyecto 6: Dashboard interactivo
+    project6: {
+      demo: 'https://dashboardcaleb.netlify.app/',        
+      github: 'https://github.com/Calebabisai/dashboard-test-curso',    
     },
   },
   
