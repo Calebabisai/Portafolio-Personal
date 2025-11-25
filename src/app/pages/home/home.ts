@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PERSONAL_LINKS } from '../../config/personal-links';
+import { LanguageService } from '../../services/language.service';
 
 /**
  * Componente de la página de inicio (Hero Section).
@@ -26,4 +27,9 @@ import { PERSONAL_LINKS } from '../../config/personal-links';
 })
 export class Home {
   protected readonly links = PERSONAL_LINKS;
+
+  /**
+   * Inyetamos el servicio de idiomas
+   */
+  readonly languageService = inject(LanguageService);
 }
