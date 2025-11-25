@@ -77,5 +77,12 @@ export const PERSONAL_LINKS = {
       certificateUrl: 'https://www.udemy.com/certificate/UC-5b6f62dd-cea8-4da8-a217-7204e3e4dfad/?utm_campaign=email&utm_medium=email&utm_source=sendgrid.com',
       period: '2025'
     },
+    {
+      title: 'Maximize Productivity With AI Tools',
+      instructor: 'Google',
+      image: '/assets/courses/googlecourseia.png', 
+      certificateUrl: 'https://www.coursera.org/account/accomplishments/verify/W6J37L68ORN2',
+      period: '2025'
+    },
   ],
 } as const;
