@@ -1,108 +1,110 @@
-    <!-- Sección de Cursos -->
-    <div class="mt-24">
-      <div class="text-center mb-16">
-        <h3 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          Cursos
-        </h3>
-        <p class="text-gray-600 dark:text-gray-400 text-lg">
-          Certificaciones y formación continua
-        </p>
-      </div>
+<!-- Sección de Cursos -->
+<section id="courses" class="min-h-screen bg-white dark:bg-zinc-900 text-black dark:text-white py-20 px-6">
+  
+  <div class="max-w-7xl mx-auto">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        Cursos
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg">
+        Certificaciones y formación continua
+      </p>
+    </div>
 
-      <!-- Grid de cursos -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        @for (course of links.courses; track course.title) {
-          <div class="group bg-white dark:bg-zinc-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
-            <!-- Imagen del curso -->
-            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
-              <img [src]="course.image" [alt]="course.title" 
-                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                   onerror="this.src='https://via.placeholder.com/400x200?text=Curso'">
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
-            </div>
+    <!-- Grid de cursos -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Tarjetas de cursos -->
+      @for (course of links.courses; track course.title) {
+        <div class="group bg-white dark:bg-zinc-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
+          
+          <!-- Imagen del curso -->
+          <div class="relative h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
+            <img [src]="course.image" [alt]="course.title" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                 onerror="this.src='https://via.placeholder.com/400x200?text=Curso'">
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+          </div>
 
-            <!-- Contenido -->
-            <div class="p-6 space-y-4 flex flex-col flex-1">
-              <h4 class="text-2xl font-bold text-gray-900 dark:text-white line-clamp-2 min-h-[56px]">
-                {{ course.title }}
-              </h4>
-              <p class="text-gray-600 dark:text-gray-400">
-                {{ course.instructor }}
+          <!-- Contenido -->
+          <div class="p-6 space-y-4 flex flex-col flex-1">
+            <h4 class="text-2xl font-bold text-gray-900 dark:text-white line-clamp-2 min-h-[56px]">
+              {{ course.title }}
+            </h4>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
+              {{ course.instructor }}
+            </p>
+            
+            @if (course.period) {
+              <p class="text-sm text-blue-600 dark:text-blue-400 font-semibold">
+                📅 {{ course.period }}
               </p>
-              
-              @if (course.period) {
-                <p class="text-sm text-blue-600 dark:text-blue-400 font-semibold">
-                  {{ course.period }}
-                </p>
-              }
+            }
 
-              <!-- Botón del certificado -->
-              <div class="pt-4 mt-auto">
-                <a [href]="course.certificateUrl" target="_blank"
-                   class="block w-full text-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                  Ver Certificado
-                </a>
-              </div>
+            <!-- Botón del certificado -->
+            <div class="pt-4 mt-auto">
+              <a [href]="course.certificateUrl" target="_blank" rel="noopener noreferrer"
+                 class="block w-full text-center py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
+                Ver Certificado
+              </a>
             </div>
           </div>
-        }
-<!-- Texto de aprendizaje (lado derecho) -->
-    <div class="w-96 sticky top-32 flex-shrink-0">
-      <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-zinc-800 dark:to-zinc-700 rounded-2xl p-8 border border-blue-100 dark:border-zinc-600 shadow-lg">
+        </div>
+      }
+
+      <!-- Tarjeta de Aprendizaje Continuo -->
+      <div class="group bg-gradient-to-br from-blue-50 to-purple-50 dark:from-zinc-800 dark:to-zinc-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col border-2 border-blue-200 dark:border-blue-800">
         
-        <!-- Icono decorativo -->
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-            <span class="text-2xl"></span>
+        <!-- Contenido -->
+        <div class="p-6 space-y-4 flex flex-col flex-1 h-full justify-center items-center text-center">
+          
+          <!-- Icono -->
+          <div class="text-6xl mb-4">
+            
           </div>
-          <h4 class="text-2xl font-bold text-gray-900 dark:text-white">
+
+          <!-- Título -->
+          <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Ampliando mis conocimientos
           </h4>
+
+          <!-- Descripción -->
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+            Estoy en constante amplitud de mis conocimientos:
+          </p>
+
+          <!-- Lista -->
+          <ul class="space-y-3 w-full text-left mb-6">
+            <li class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+              <span class="text-blue-600 dark:text-blue-400 text-xl"></span>
+              <span>Implementacion de IA en el Frontend</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+              <span class="text-blue-600 dark:text-blue-400 text-xl"></span>
+              <span>Reforzar mi stack tecnológico</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+              <span class="text-blue-600 dark:text-blue-400 text-xl"></span>
+              <span>Aprendiendo nuevas tecnologías</span>
+            </li>
+          </ul>
+
+          <!-- Línea decorativa -->
+          <div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-4"></div>
+
+          <!-- Mensaje motivacional -->
+          <p class="text-sm text-gray-600 dark:text-gray-400 italic">
+            "La educación es el arma más poderosa para cambiar el mundo."
+          </p>
         </div>
-
-        <!-- Descripción -->
-        <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-          Estoy en constante evolución, explorando nuevas tecnologías y especializándome en:
-        </p>
-        
-        <!-- Lista de aprendizaje -->
-        <ul class="space-y-4 mb-6">
-          <li class="flex items-start gap-3">
-            <span class="text-blue-600 dark:text-blue-400 text-2xl flex-shrink-0"></span>
-            <span class="text-gray-700 dark:text-gray-300">
-              <strong>IA en el Frontend</strong>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Implementación de modelos de IA</p>
-            </span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-blue-600 dark:text-blue-400 text-2xl flex-shrink-0"></span>
-            <span class="text-gray-700 dark:text-gray-300">
-              <strong>Stack Tecnológico</strong>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Reforzando mis habilidades</p>
-            </span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-blue-600 dark:text-blue-400 text-2xl flex-shrink-0"></span>
-            <span class="text-gray-700 dark:text-gray-300">
-              <strong>Nuevas Tecnologías</strong>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Siempre aprendiendo algo nuevo</p>
-            </span>
-          </li>
-        </ul>
-
-        <!-- Línea decorativa -->
-        <div class="h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-6"></div>
-        
-        <!-- Mensaje motivacional -->
-        <p class="text-center text-gray-700 dark:text-gray-300 italic font-medium">
-          "La educación es el arma más poderosa para cambiar el mundo."
-        </p>
       </div>
+
     </div>
 
   </div>
-  
-</div>
+
+</section>
 
 
     

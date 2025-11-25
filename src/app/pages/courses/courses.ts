@@ -1,6 +1,5 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { PERSONAL_LINKS } from '../../config/personal-links';
-import { CommonModule } from '@angular/common';
 
 /** Componente de Cursos y certificados
  * 
@@ -17,4 +16,5 @@ import { CommonModule } from '@angular/common';
 })
 export class Courses {
   links = PERSONAL_LINKS
+
 }
