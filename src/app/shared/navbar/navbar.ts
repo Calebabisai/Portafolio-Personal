@@ -1,7 +1,9 @@
-import { Component, inject, signal, HostListener } from '@angular/core';
+import { Component, inject, signal, HostListener, computed } from '@angular/core';
 import { ThemeToggle } from "../../components/theme-toggle/theme-toggle";
 import { ScrollService } from '../../services/scroll.service';
 import { CommonModule } from '@angular/common';
+import { LanguageService} from '../../services/language.service';
+import { Language } from '../../config/i18n.config';
 
 /**
  * Interfaz para los elementos del menú de navegación.
@@ -42,6 +44,10 @@ export class Navbar {
    * @private
    */
   private readonly scrollService = inject(ScrollService);
+  /**
+   * inyecta nuestro servicio de Lenguaje
+   */
+  readonly languageService = inject(LanguageService);
 
   /**
    * Signal que indica qué sección está actualmente visible.
@@ -65,14 +71,24 @@ export class Navbar {
    * 
    * @readonly
    */
-  readonly menuItems: MenuItem[] = [
-    { id: 'home', label: 'Inicio' },
-    { id: 'about', label: 'Sobre mí' },
-    { id: 'projects', label: 'Proyectos' },
-    { id: 'courses', label: 'Cursos'},
-    { id: 'skills', label: 'Habilidades' },
-    { id: 'contact', label: 'Contacto' }
-  ];
+    readonly menuItems = computed(() => {
+    const translations = this.languageService.getAllTranslations();
+
+    return [
+      {id: 'home', label: translations.navbar.inicio},
+      {id: 'about', label: translations.navbar.sobreMi},
+      {id: 'projects', label: translations.navbar.proyectos},
+      {id: 'courses', label: translations.navbar.cursos},
+      {id: 'skills', label: translations.navbar.habilidades},
+      {id: 'contact', label: translations.navbar.contacto},
+    ]
+  });
+
+  changeLanguage(): void {
+    const currentLang = this.languageService.currentLanguage();
+    const newLang: Language = currentLang === 'es' ? 'en' : 'es';
+    this.languageService.changeLanguage(newLang)
+  }
 
   /**
    * Navega a una sección específica de la página.
@@ -127,7 +143,7 @@ export class Navbar {
    */
   private detectActiveSection(): void {
     const detectionThreshold = 150;
-    const sections = this.menuItems.map(item => item.id);
+    const sections = this.menuItems().map(item => item.id);
 
     for (const sectionId of sections) {
       const element = document.getElementById(sectionId);
