@@ -89,7 +89,16 @@ export const translations = {
     skills: {
       titulo: 'Tecnologías que domino',
       subtitulo: 'Mi stack tecnológico principal',
-      stack: 'stack completo'
+      stack: 'stack completo',
+      implementacionIA: {
+    titulo: 'Implementación de IA',
+    subtitulo: 'Herramientas para integrar inteligencia artificial',
+    tools: [
+      'Google Genkit',
+      'Firebase AI Logic',
+      'Gemini API'
+    ]
+  }
     },
     contact: {
       titulo: 'Contacto',
@@ -225,8 +234,18 @@ export const translations = {
     skills: {
       titulo: 'Technologies I Master',
       subtitulo: 'My main tech stack',
-      stack: 'Complete stack'
-    },
+      stack: 'Complete stack',
+
+     implementacionIA: {
+    titulo: 'AI Implementation',
+    subtitulo: 'Tools to integrate artificial intelligence',
+    tools: [
+      'Google Genkit',
+      'Firebase AI Logic',
+      'Gemini API'
+    ]
+  }
+  },
     contact: {
       titulo: 'Contact',
       subtitulo: 'Do you have a project in mind?',

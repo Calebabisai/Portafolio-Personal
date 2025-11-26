@@ -136,3 +136,9 @@ html.dark ::-webkit-scrollbar-thumb:hover {
   background: #71717a;
 }
 
+section[id],
+div[id] {
+  scroll-margin-top: 100px; /* Ajusta este valor */
+}
+
+
