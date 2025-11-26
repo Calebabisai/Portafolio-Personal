@@ -1,4 +1,5 @@
 export const translations = {
+  /** Todas las traducciones al Español */
     es: {
         navbar: {
             inicio: 'Inicio',
@@ -70,8 +71,71 @@ export const translations = {
         }
       ]
     },
+    courses: {
+      titulo: 'Cursos',
+      subtitulo: 'Certificaciones y formación continua',
+      botonCertificado: 'Ver Certificado',
+      card: {
+        titulo: 'Ampliando mis conocimientos',
+        descripcion: 'Estoy en constante amplitud de mis conocimientos:',
+        objetivos: [
+          'Implementación de IA en el Frontend',
+          'Reforzar mi stack tecnológico',
+          'Aprendiendo nuevas tecnologías'
+        ],
+        quote: '"La educación es el arma más poderosa para cambiar el mundo."'
+      }
+    },
+    skills: {
+      titulo: 'Tecnologías que domino',
+      subtitulo: 'Mi stack tecnológico principal',
+      stack: 'stack completo'
+    },
+    contact: {
+      titulo: 'Contacto',
+      subtitulo: '¿Tienes un proyecto en mente?',
+      botonContactame: '¡Contáctame!',
+      botonTrabajemos: 'Trabajemos juntos',
+      descripcion: 'Estoy disponible para proyectos freelance, colaboraciones o posiciones full-time. Si tienes una idea o propuesta, no dudes en contactarme.',
+      contactame: 'También me encuentras en:',
+      enviando: 'Enviando...',
+
+      //placeholders
+      placeholders: {
+        nombre: 'Tu nombre',
+        email: 'tu@email.com',
+        asunto: 'Idea/proyecto/propuesta',
+        mensaje: 'Cuéntame sobre tu proyecto...'
+      },
+      form: {
+        nombre: 'Nombre',
+        email: 'Correo electrónico',
+        asunto: 'Asunto',
+        mensaje: 'Mensaje',
+        botonEnviar: 'Enviar mensaje',
+        exito: '¡Mensaje enviado correctamente!',
+        error: 'Error al enviar el mensaje. Intenta de nuevo.'
+      }
+    },
+    footer: {
+      descripcion: 'Desarrollador Frontend especializado en crear experiencias web modernas y accesibles.',
+      navegacion: 'Navegación',
+      enlaces: {
+        inicio: 'Inicio',
+        sobreMi: 'Sobre mí',
+        cursos: 'Cursos',
+        proyectos: 'Proyectos',
+        habilidades: 'Habilidades',
+        contacto: 'Contacto'
+      },
+      contacto: 'Contacto',
+      copyright: '© 2025 Caleb Trevizo. Todos los derechos reservados. Hecho con ❤️ y Angular'
+    }
   },
 
+    /**
+     * Todas las traducciones al inglés
+     */
     en: {
         navbar: {
             inicio: 'Home',
@@ -142,6 +206,65 @@ export const translations = {
           descripcion: 'Interactive dashboard that marks server connections and disconnections. Functional and reactive design.'
         }
       ]
+    },
+    courses: {
+      titulo: 'Courses',
+      subtitulo: 'Certifications and continuous training',
+      botonCertificado: 'View Certificate',
+      card: {
+        titulo: 'Expanding my knowledge',
+        descripcion: 'I am constantly expanding my knowledge:',
+        objetivos: [
+          'AI Implementation in Frontend',
+          'Strengthening my tech stack',
+          'Learning new technologies'
+        ],
+        quote: '"Education is the most powerful weapon for changing the world."'
+      }
+    },
+    skills: {
+      titulo: 'Technologies I Master',
+      subtitulo: 'My main tech stack',
+      stack: 'Complete stack'
+    },
+    contact: {
+      titulo: 'Contact',
+      subtitulo: 'Do you have a project in mind?',
+      botonContactame: 'Contact Me!',
+      botonTrabajemos: 'Let\'s work together',
+      descripcion: 'I am available for freelance projects, collaborations, or full-time positions. If you have an idea or proposal, feel free to contact me.',
+      contactame: 'You can also find me at:',
+      enviando: 'Sending...',
+      // placeholders
+      placeholders: {
+        nombre: 'Your name',
+        email: 'your@email.com',
+        asunto: 'Idea/project/proposal',
+        mensaje: 'Tell me about your project...'
+      },
+      form: {
+        nombre: 'Name',
+        email: 'Email address',
+        asunto: 'Subject',
+        mensaje: 'Message',
+        botonEnviar: 'Send message',
+        exito: 'Message sent successfully!',
+        error: 'Error sending message. Try again.'
+      }
+    },
+    footer: {
+      descripcion: 'Frontend Developer specialized in creating modern and accessible web experiences.',
+      navegacion: 'Navigation',
+      enlaces: {
+        inicio: 'Home',
+        sobreMi: 'About Me',
+        cursos: 'Courses',
+        proyectos: 'Projects',
+        habilidades: 'Skills',
+        contacto: 'Contact'
+      },
+      contacto: 'Contact',
+      copyright: '© 2025 Caleb Trevizo. All rights reserved. Made with ❤️ and Angular'
     }
   }
 };

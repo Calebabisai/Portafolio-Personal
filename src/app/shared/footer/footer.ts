@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PERSONAL_LINKS } from '../../config/personal-links';
+import { LanguageService } from '../../services/language.service';
 
 /**
  * Componente de pie de página (footer).
@@ -28,5 +29,6 @@ import { PERSONAL_LINKS } from '../../config/personal-links';
   styleUrl: './footer.scss',
 })
 export class Footer {
+  readonly languageService = inject(LanguageService);
   protected readonly links = PERSONAL_LINKS;
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PERSONAL_LINKS } from '../../config/personal-links';
-
+import { inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 /** Componente de Cursos y certificados
  * 
  * En este componente se muestran mis cursos, con sus imagenes, certificados
@@ -16,5 +17,5 @@ import { PERSONAL_LINKS } from '../../config/personal-links';
 })
 export class Courses {
   links = PERSONAL_LINKS
-
+  readonly languageService = inject(LanguageService);
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 import { PERSONAL_LINKS } from '../../config/personal-links';
+import { LanguageService } from '../../services/language.service';
 
 /**
  * Componente de la sección de Contacto con integración de EmailJS.
@@ -28,6 +29,7 @@ import { PERSONAL_LINKS } from '../../config/personal-links';
 export class Contact {
   private fb = inject(FormBuilder);
   protected readonly links = PERSONAL_LINKS;
+  readonly languageService = inject(LanguageService);
   
   // Estados del formulario
   isSubmitting = false;

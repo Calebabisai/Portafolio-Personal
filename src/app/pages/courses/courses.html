@@ -5,10 +5,10 @@
     
     <div class="text-center mb-16">
       <h2 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-        Cursos
+        {{ languageService.getAllTranslations().courses.titulo }}
       </h2>
       <p class="text-gray-600 dark:text-gray-400 text-lg">
-        Certificaciones y formación continua
+        {{ languageService.getAllTranslations().courses.subtitulo }}
       </p>
     </div>
 
@@ -46,11 +46,11 @@
             <div class="pt-4 mt-auto">
               <a [href]="course.certificateUrl" target="_blank" rel="noopener noreferrer"
                  class="block w-full text-center py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
-                Ver Certificado
+                {{ languageService.getAllTranslations().courses.botonCertificado }}
               </a>
             </div>
           </div>
-        </div>
+        </div> 
       }
 
       <!-- Tarjeta de Aprendizaje Continuo -->
@@ -66,28 +66,22 @@
 
           <!-- Título -->
           <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Ampliando mis conocimientos
+            {{ languageService.getAllTranslations().courses.card.titulo }}
           </h4>
 
           <!-- Descripción -->
           <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-            Estoy en constante amplitud de mis conocimientos:
+            {{ languageService.getAllTranslations().courses.card.descripcion }}
           </p>
 
-          <!-- Lista -->
+          <!-- Lista de objetivos traducida -->
           <ul class="space-y-3 w-full text-left mb-6">
-            <li class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <span class="text-blue-600 dark:text-blue-400 text-xl"></span>
-              <span>Implementacion de IA en el Frontend</span>
-            </li>
-            <li class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <span class="text-blue-600 dark:text-blue-400 text-xl"></span>
-              <span>Reforzar mi stack tecnológico</span>
-            </li>
-            <li class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
-              <span class="text-blue-600 dark:text-blue-400 text-xl"></span>
-              <span>Aprendiendo nuevas tecnologías</span>
-            </li>
+            @for (objetivo of languageService.getAllTranslations().courses.card.objetivos; track objetivo) {
+              <li class="flex items-center gap-2 text-gray-700 dark:text-gray-300">
+                <span class="text-blue-600 dark:text-blue-400 text-xl">✓</span>
+                <span>{{ objetivo }}</span>
+              </li>
+            }
           </ul>
 
           <!-- Línea decorativa -->
@@ -95,7 +89,7 @@
 
           <!-- Mensaje motivacional -->
           <p class="text-sm text-gray-600 dark:text-gray-400 italic">
-            "La educación es el arma más poderosa para cambiar el mundo."
+            {{ languageService.getAllTranslations().courses.card.quote }}
           </p>
         </div>
       </div>

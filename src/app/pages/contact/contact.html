@@ -6,10 +6,10 @@
     <!-- Título -->
     <div class="text-center mb-16">
       <h2 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-        Contacto
+        {{ languageService.getAllTranslations().contact.titulo }}
       </h2>
       <p class="text-gray-600 dark:text-gray-400 text-lg">
-        ¿Tienes un proyecto en mente?, ¡Contactame!
+        {{ languageService.getAllTranslations().contact.subtitulo }}
       </p>
     </div>
 
@@ -19,10 +19,9 @@
       <div class="space-y-8">
         
         <div class="space-y-4">
-          <h3 class="text-2xl font-bold mb-6">Trabajemos juntos</h3>
+          <h3 class="text-2xl font-bold mb-6">{{ languageService.getAllTranslations().contact.botonTrabajemos }}</h3>
           <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-            Estoy disponible para proyectos freelance, colaboraciones o posiciones full-time. 
-            Si tienes una idea o propuesta, no dudes en contactarme.
+            {{ languageService.getAllTranslations().contact.descripcion }}
           </p>
         </div>
 
@@ -41,7 +40,7 @@
               </svg>
             </div>
             <div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">Email</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">{{ languageService.getAllTranslations().contact.form.email }}</div>
               <div class="font-semibold text-gray-900 dark:text-white">{{ links.email }}</div>
             </div>
           </a>
@@ -84,7 +83,7 @@
 
         <!-- Redes sociales adicionales -->
         <div class="pt-6">
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">También me encuentras en:</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">{{ languageService.getAllTranslations().contact.contactame }}</p>
           <div class="flex gap-4">
             <!-- WhatsApp -->
             <a [href]="links.whatsapp" target="_blank" 
@@ -121,12 +120,12 @@
           <!-- Nombre -->
           <div>
             <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-              Nombre completo *
+              {{ languageService.getAllTranslations().contact.form.nombre }} *
             </label>
             <input 
               type="text" 
               formControlName="nombre"
-              placeholder="Tu nombre"
+              placeholder="{{ languageService.getAllTranslations().contact.placeholders.nombre }}"
               [class]="'w-full px-4 py-3 bg-white dark:bg-zinc-900 rounded-lg transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 ' + 
                        (hasError('nombre') ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-500' : 'border border-gray-300 dark:border-zinc-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent')">
             @if (hasError('nombre')) {
@@ -137,12 +136,12 @@
           <!-- Email -->
           <div>
             <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-              Email *
+              {{ languageService.getAllTranslations().contact.form.email }} *
             </label>
             <input 
               type="email" 
               formControlName="email"
-              placeholder="tu@email.com"
+              placeholder="{{ languageService.getAllTranslations().contact.placeholders.email }}"
               [class]="'w-full px-4 py-3 bg-white dark:bg-zinc-900 rounded-lg transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 ' + 
                        (hasError('email') ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-500' : 'border border-gray-300 dark:border-zinc-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent')">
             @if (hasError('email')) {
@@ -153,12 +152,12 @@
           <!-- Asunto -->
           <div>
             <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-              Asunto *
+              {{ languageService.getAllTranslations().contact.form.asunto }} *
             </label>
             <input 
               type="text" 
               formControlName="asunto"
-              placeholder="Idea/proyecto/propuesta"
+              placeholder="{{ languageService.getAllTranslations().contact.placeholders.asunto }}"
               [class]="'w-full px-4 py-3 bg-white dark:bg-zinc-900 rounded-lg transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 ' + 
                        (hasError('asunto') ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-500' : 'border border-gray-300 dark:border-zinc-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent')">
             @if (hasError('asunto')) {
@@ -169,12 +168,12 @@
           <!-- Mensaje -->
           <div>
             <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-              Mensaje *
+              {{ languageService.getAllTranslations().contact.form.mensaje }} *
             </label>
             <textarea 
               rows="5"
               formControlName="mensaje"
-              placeholder="Cuéntame sobre tu proyecto..."
+              placeholder="{{ languageService.getAllTranslations().contact.placeholders.mensaje }}"
               [class]="'w-full px-4 py-3 bg-white dark:bg-zinc-900 rounded-lg transition-all duration-300 resize-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 ' + 
                        (hasError('mensaje') ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-500' : 'border border-gray-300 dark:border-zinc-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent')"></textarea>
             @if (hasError('mensaje')) {
@@ -186,7 +185,7 @@
           @if (submitSuccess) {
             <div class="p-4 bg-green-100 dark:bg-green-900/30 border border-green-500 rounded-lg">
               <p class="text-green-700 dark:text-green-400 font-semibold">
-                ✅ ¡Mensaje enviado con éxito! Te responderé pronto.
+                ✅ {{ languageService.getAllTranslations().contact.form.exito}}
               </p>
             </div>
           }
@@ -194,7 +193,7 @@
           @if (submitError) {
             <div class="p-4 bg-red-100 dark:bg-red-900/30 border border-red-500 rounded-lg">
               <p class="text-red-700 dark:text-red-400 font-semibold">
-                ❌ {{ errorMessage }}
+                ❌ {{ languageService.getAllTranslations().contact.form.error }}
               </p>
             </div>
           }
@@ -213,10 +212,10 @@
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Enviando...
+                {{ languageService.getAllTranslations().contact.enviando }}
               </span>
             } @else {
-              <span>Enviar mensaje</span>
+              <span>{{ languageService.getAllTranslations().contact.form.botonEnviar }}</span>
             }
           </button>
 

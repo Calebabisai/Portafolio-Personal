@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../services/language.service';
 
 /**
  * Interfaz para definir la estructura de una tecnología
@@ -46,6 +47,8 @@ interface Technology {
   styleUrl: './skills.scss',
 })
 export class Skills {
+
+  readonly languageService = inject(LanguageService);
   
   /**
    * Array de tecnologías con sus respectivos iconos y colores
