@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
-import { SanitizePipe } from '../../pipes/sanitize.pipe-pipe';
+import { SanitizePipe } from '../../pipes/sanitize.pipe';
 
 /**
  * Componente de la sección "Sobre mí".

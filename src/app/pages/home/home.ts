@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PERSONAL_LINKS } from '../../config/personal-links';
 import { LanguageService } from '../../services/language.service';
-import { SanitizePipe } from '../../pipes/sanitize.pipe-pipe';
+import { SanitizePipe } from '../../pipes/sanitize.pipe';
 
 /**
  * Componente de la página de inicio (Hero Section).
