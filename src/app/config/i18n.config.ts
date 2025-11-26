@@ -105,7 +105,7 @@ export const translations = {
       subtitulo: '¿Tienes un proyecto en mente?',
       botonContactame: '¡Contáctame!',
       botonTrabajemos: 'Trabajemos juntos',
-      descripcion: 'Estoy disponible para proyectos freelance, colaboraciones o posiciones full-time. Si tienes una idea o propuesta, no dudes en contactarme.',
+      descripcion: 'Estoy disponible para proyectos freelance, colaboraciones o posiciones de tiempo completo. Si tienes una idea o propuesta, no dudes en contactarme.',
       contactame: 'También me encuentras en:',
       enviando: 'Enviando...',
 
@@ -232,7 +232,7 @@ export const translations = {
       }
     },
     skills: {
-      titulo: 'Technologies I Master',
+      titulo: 'Technologies I work with',
       subtitulo: 'My main tech stack',
       stack: 'Complete stack',
 
