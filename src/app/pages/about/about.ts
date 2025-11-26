@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
+import { SanitizePipe } from '../../pipes/sanitize.pipe-pipe';
 
 /**
  * Componente de la sección "Sobre mí".
@@ -18,11 +20,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [SanitizePipe],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
 export class About {
   // Componente presentacional
   // El contenido está definido en el template HTML
+  readonly languageService = inject(LanguageService);
 }

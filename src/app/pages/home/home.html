@@ -35,7 +35,7 @@
 
         <!-- Descripción -->
         <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
-          {{ languageService.getAllTranslations().home.descripcion }}
+          <span [innerHTML]="languageService.getAllTranslations().home.descripcion | sanitize"></span>
           <br><br>
           {{ languageService.getAllTranslations().home.proyectoEspecial }}
         </p>

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PERSONAL_LINKS } from '../../config/personal-links';
 import { LanguageService } from '../../services/language.service';
+import { SanitizePipe } from '../../pipes/sanitize.pipe-pipe';
 
 /**
  * Componente de la página de inicio (Hero Section).
@@ -21,7 +22,7 @@ import { LanguageService } from '../../services/language.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SanitizePipe],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

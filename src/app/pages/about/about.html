@@ -6,10 +6,10 @@
     <!-- Título -->
     <div class="text-center mb-12">
       <h2 class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-        Sobre mí
+        {{ languageService.getAllTranslations().about.titulo }}
       </h2>
       <p class="text-gray-600 dark:text-gray-400 text-lg">
-        Conoce más sobre mi trayectoria
+        {{ languageService.getAllTranslations().about.subtitulo }}
       </p>
     </div>
 
@@ -25,64 +25,63 @@
         </div>
       </div>
 
-      <!-- Contenido -->
       <div class="space-y-6">
-        
-        <div class="space-y-4 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-          <p>
-            Soy un <span class="text-blue-600 dark:text-blue-400 font-semibold">desarrollador frontend apasionado</span> 
-            con experiencia en la creación de aplicaciones web modernas y responsivas.
-          </p>
-          
-          <p>
-            Especializado en <span class="font-semibold text-blue-600 dark:text-blue-400">Angular</span> y con base de 
-            <span class="font-semibold text-cyan-600 dark:text-cyan-400">React</span>, 
-            me encanta transformar diseños complejos en interfaces elegantes, funcionales y entendibles para los usuarios.
-          </p>
+  
+  <div class="space-y-4 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+    
+    <p [innerHTML]="languageService.getAllTranslations().about.descripcion1 | sanitize"></p>
+    
+    <p [innerHTML]="languageService.getAllTranslations().about.descripcion2 | sanitize"></p>
 
-          <p>
-            Mi enfoque está en escribir código limpio, mantenible y escalable, siempre buscando 
-            las mejores prácticas (individual y en equipo) y mantenerme siempre actualizado en las últimas tecnologías frontend.
-          </p>
-        </div>
+    <p [innerHTML]="languageService.getAllTranslations().about.descripcion3 | sanitize"></p>
+    
+  </div>
 
-        <!-- Skills destacados -->
-        <div class="grid grid-cols-2 gap-4 pt-6">
-          
-          <div class="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl hover:scale-105 transition-transform">
-            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">1+</div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">Años de experiencia</div>
-          </div>
-
-          <div class="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl hover:scale-105 transition-transform">
-            <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">10+</div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">Proyectos completados</div>
-          </div>
-
-          <div class="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl hover:scale-105 transition-transform">
-            <div class="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">10+</div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">Tecnologías</div>
-          </div>
-
-          <div class="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl hover:scale-105 transition-transform">
-            <div class="text-3xl font-bold text-pink-600 dark:text-pink-400 mb-2">100%</div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">Dedicación</div>
-          </div>
-
-        </div>
-
-        <!-- Botón CTA -->
-        <div class="pt-6">
-          <a href="#contact" 
-             class="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 
-                    text-white font-semibold rounded-xl
-                    hover:shadow-2xl hover:scale-105 
-                    transition-all duration-300">
-            Trabajemos juntos
-          </a>
-        </div>
-
+  <!-- Skills destacados -->
+  <div class="grid grid-cols-2 gap-4 pt-6">
+    
+    <div class="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl hover:scale-105 transition-transform">
+      <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">1+</div>
+      <div class="text-sm text-gray-600 dark:text-gray-400">
+        {{ languageService.getAllTranslations().about.stats.experiencia }}
       </div>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl hover:scale-105 transition-transform">
+      <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">10+</div>
+      <div class="text-sm text-gray-600 dark:text-gray-400">
+        {{ languageService.getAllTranslations().about.stats.proyectos }}
+      </div>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl hover:scale-105 transition-transform">
+      <div class="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">10+</div>
+      <div class="text-sm text-gray-600 dark:text-gray-400">
+        {{ languageService.getAllTranslations().about.stats.tecnologias }}
+      </div>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl hover:scale-105 transition-transform">
+      <div class="text-3xl font-bold text-pink-600 dark:text-pink-400 mb-2">100%</div>
+      <div class="text-sm text-gray-600 dark:text-gray-400">
+        {{ languageService.getAllTranslations().about.stats.dedicacion }}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Botón CTA -->
+  <div class="pt-6">
+    <a href="#contact" 
+       class="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 
+              text-white font-semibold rounded-xl
+              hover:shadow-2xl hover:scale-105 
+              transition-all duration-300">
+      {{ languageService.getAllTranslations().about.botonTrabajemos }}
+    </a>
+  </div>
+
+</div>
 
     </div>
 
