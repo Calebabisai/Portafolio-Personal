@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ThemeServices } from '../../services/theme-services';
-
+import { ThemeServices } from '../../services/theme.service';
 /**
  * Componente botón para alternar entre tema claro y oscuro.
  * 
