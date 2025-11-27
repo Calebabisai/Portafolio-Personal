@@ -2,46 +2,145 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+/* METEOROS - Efecto lluvia de estrellas */
+@keyframes meteor {
+  0% {
+    opacity: 1;
+    margin-top: -300px;
+    margin-right: -300px;
+  }
+  12% {
+    opacity: 0;
+  }
+  15% {
+    margin-top: 300px;
+    margin-left: -600px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Contenedor de estrellas fijas */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Estrellas fijas de fondo - LIGHT MODE (puntos oscuros) */
+.star {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+    120px 80px rgba(50,50,70,0.4), 350px 150px rgba(50,50,70,0.3), 580px 40px rgba(50,50,70,0.5),
+    820px 200px rgba(50,50,70,0.3), 1050px 90px rgba(50,50,70,0.4), 1280px 180px rgba(50,50,70,0.3),
+    1500px 60px rgba(50,50,70,0.5), 180px 280px rgba(50,50,70,0.4), 420px 350px rgba(50,50,70,0.3),
+    680px 420px rgba(50,50,70,0.5), 920px 300px rgba(50,50,70,0.4), 1150px 380px rgba(50,50,70,0.3),
+    1380px 290px rgba(50,50,70,0.4), 1600px 400px rgba(50,50,70,0.5), 90px 500px rgba(50,50,70,0.3),
+    300px 580px rgba(50,50,70,0.4), 540px 520px rgba(50,50,70,0.5), 780px 600px rgba(50,50,70,0.3),
+    1020px 540px rgba(50,50,70,0.4), 1260px 620px rgba(50,50,70,0.5), 1480px 550px rgba(50,50,70,0.3),
+    200px 120px rgba(50,50,70,0.4), 450px 250px rgba(50,50,70,0.3), 720px 100px rgba(50,50,70,0.5),
+    980px 450px rgba(50,50,70,0.4), 1200px 550px rgba(50,50,70,0.3), 1400px 150px rgba(50,50,70,0.5),
+    60px 380px rgba(50,50,70,0.4), 280px 720px rgba(50,50,70,0.3), 520px 680px rgba(50,50,70,0.5),
+    760px 780px rgba(50,50,70,0.4), 1000px 720px rgba(50,50,70,0.3), 1300px 480px rgba(50,50,70,0.5);
+}
+
+/* Estrellas fijas - DARK MODE */
+html.dark .star {
+  box-shadow: 
+    120px 80px #fff, 350px 150px #fff, 580px 40px #fff, 820px 200px #fff,
+    1050px 90px #fff, 1280px 180px #fff, 1500px 60px #fff, 180px 280px #fff,
+    420px 350px #fff, 680px 420px #fff, 920px 300px #fff, 1150px 380px #fff,
+    1380px 290px #fff, 1600px 400px #fff, 90px 500px #fff, 300px 580px #fff,
+    540px 520px #fff, 780px 600px #fff, 1020px 540px #fff, 1260px 620px #fff,
+    1480px 550px #fff;
+  opacity: 0.4;
+}
+
+/* Meteoros base - LIGHT MODE (oscuros sutiles) */
+[class^="meteor-"] {
+  position: absolute;
+  width: 300px;
+  height: 1px;
+  transform: rotate(-45deg);
+  background-image: linear-gradient(to right, rgba(80, 80, 100, 0.5), rgba(80,80,100,0));
+  animation: meteor linear infinite;
+  opacity: 0;
+}
+
+[class^="meteor-"]::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 5px;
+  border-radius: 50%;
+  margin-top: -2px;
+  background: rgba(80,80,100,0.6);
+  box-shadow: 0 0 10px 2px rgba(80,80,100,0.3);
+}
+
+/* Meteoros - DARK MODE (blancos brillantes) */
+html.dark [class^="meteor-"] {
+  background-image: linear-gradient(to right, #fff, rgba(255,255,255,0));
+}
+
+html.dark [class^="meteor-"]::before {
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 0 15px 3px #fff;
+}
+
+/* Cada meteoro con posición y delay diferente */
+.meteor-1 { top: 80px; left: 15%; animation-duration: 8s; animation-delay: 0s; }
+.meteor-2 { top: 150px; left: 35%; animation-duration: 6s; animation-delay: 2s; }
+.meteor-3 { top: 200px; left: 55%; animation-duration: 9s; animation-delay: 4s; }
+.meteor-4 { top: 120px; left: 75%; animation-duration: 7s; animation-delay: 1s; }
+.meteor-5 { top: 250px; left: 25%; animation-duration: 10s; animation-delay: 6s; }
+.meteor-6 { top: 180px; left: 85%; animation-duration: 5s; animation-delay: 3s; }
+.meteor-7 { top: 100px; left: 45%; animation-duration: 8s; animation-delay: 8s; }
+.meteor-8 { top: 220px; left: 65%; animation-duration: 6s; animation-delay: 5s; }
+.meteor-9 { top: 90px; left: 10%; animation-duration: 9s; animation-delay: 10s; }
+.meteor-10 { top: 280px; left: 50%; animation-duration: 7s; animation-delay: 7s; }
+.meteor-11 { top: 160px; left: 30%; animation-duration: 11s; animation-delay: 12s; }
+.meteor-12 { top: 130px; left: 70%; animation-duration: 6s; animation-delay: 9s; }
+.meteor-13 { top: 240px; left: 20%; animation-duration: 8s; animation-delay: 14s; }
+.meteor-14 { top: 110px; left: 90%; animation-duration: 10s; animation-delay: 11s; }
+.meteor-15 { top: 190px; left: 40%; animation-duration: 7s; animation-delay: 16s; }
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* Animaciones personalizadas */
 @layer utilities {
-  /* Fade in */
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .animate-fade-in {
     animation: fadeIn 1s ease-out;
   }
 
-  /* Bounce lento */
   @keyframes bounceSlow {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
   .animate-bounce-slow {
     animation: bounceSlow 2s ease-in-out infinite;
   }
 
-  /* Gradiente animado */
   @keyframes gradient {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   .animate-gradient {
@@ -49,14 +148,9 @@
     animation: gradient 3s ease infinite;
   }
 
-  /* Typing effect */
   @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
+    from { width: 0; }
+    to { width: 100%; }
   }
 
   .animate-typing {
@@ -65,14 +159,9 @@
     animation: typing 2s steps(30) 1s 1 normal both;
   }
 
-  /* Float effect */
   @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 
   .animate-float {
@@ -84,16 +173,9 @@
     animation-delay: 1s;
   }
 
-  /* Scroll reveal */
   @keyframes scrollReveal {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .animate-scroll-reveal {
@@ -101,44 +183,13 @@
   }
 }
 
-/* Smooth scroll para toda la página */
-html {
-  scroll-behavior: smooth;
-}
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+html.dark ::-webkit-scrollbar-track { background: #18181b; }
+::-webkit-scrollbar-thumb { background: #888; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+html.dark ::-webkit-scrollbar-thumb { background: #52525b; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: #71717a; }
 
-/* Mejora visual del scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-html.dark ::-webkit-scrollbar-track {
-  background: #18181b;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-html.dark ::-webkit-scrollbar-thumb {
-  background: #52525b;
-}
-
-html.dark ::-webkit-scrollbar-thumb:hover {
-  background: #71717a;
-}
-
-section[id],
-div[id] {
-  scroll-margin-top: 100px; /* Ajusta este valor */
-}
-
-
+section[id], div[id] { scroll-margin-top: 100px; }
