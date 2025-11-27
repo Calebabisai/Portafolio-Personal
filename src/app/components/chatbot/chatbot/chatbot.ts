@@ -58,12 +58,6 @@ export class Chatbot{
     if(this.messageInput.trim()) {
       //agrega mensaje del usuario al servicio
       this.chatbotService.addUserMessage(this.messageInput);
-
-      //Simular respuesta del bot (Por ahora sin Gemini)
-      setTimeout(() => {
-        this.chatbotService.addBotMessage('Hola, por el momento me encuentro en desarrollo')
-      },800);
-
       //Limpiar el input
       this.messageInput = '';
     }

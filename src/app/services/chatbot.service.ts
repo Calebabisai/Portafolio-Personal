@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { signal } from '@angular/core';
 import { Message } from '../models/message.model';
+import { GeminiService } from './gemini.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,10 @@ export class ChatbotService {
   private messages = signal<Message[]>([]);
   /**Signal para mostrar el: Cargando... */
   private isLoading = signal(false);
+  /**
+   * inyecto a geminiceService para utilizarse
+   */
+  private geminiService = inject(GeminiService);
 
   constructor(){
     console.log('Chatbot Service Inicializado')
@@ -29,7 +34,8 @@ export class ChatbotService {
 
     //Actualiza el Signal con el nuevo mensaje
     this.messages.update(msgs => [...msgs, newMessage]);
-    console.log('Mensaje del usuario:', text);
+    //Obtenemos la respuesta de Gemini
+    this.getGeminiResponse(text);
   }
   /**
    * Agrega un nuevo mensaje (del bot)
@@ -43,6 +49,23 @@ export class ChatbotService {
     };
     this.messages.update(msg => [...msg, newMessage]);
     console.log('Mensaje del Bot', text);
+  }
+
+  /**
+   * Obtener respuestas de Gemini
+   */
+  private async getGeminiResponse(userMessage: string): Promise<void> {
+    this.isLoading.set(true);
+
+    try{
+      const botResponse = await this.geminiService.sendMessage(userMessage);
+      this.addBotMessage(botResponse);
+    }catch(error){
+      console.error('Error', error);
+      this.addBotMessage('Disculpa, hubo un error al procesar tu pregunta')
+    }finally {
+      this.isLoading.set(false)
+    }
   }
 
   /**
