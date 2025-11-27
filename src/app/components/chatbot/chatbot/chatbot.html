@@ -21,12 +21,7 @@
       <!-- Mensajes -->
       <div class="messages-container" #messagesContainer>
         
-        <!-- Mensaje inicial (si no hay mensajes) -->
-        @if (messages().length === 0) {
-          <div class="message bot-message">
-            <p>¡Hola! Un gusto tenerte aqui, Puedes preguntarme sobre proyectos, cursos, habilidades y más.</p>
-          </div>
-        }
+        
 
         <!-- Mostrar cada mensaje -->
         @for (message of messages(); track message.id) {
