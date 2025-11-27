@@ -126,6 +126,30 @@ export class Skills {
       colorFrom: 'blue-500',
       colorTo: 'blue-700'
     },
+        { 
+      name: 'Node.js', 
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+      colorFrom: 'green-500',
+      colorTo: 'green-600'
+    },
+    { 
+      name: 'SQL', 
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+      colorFrom: 'blue-600',
+      colorTo: 'blue-700'
+    },
+    { 
+      name: 'AWS', 
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+      colorFrom: 'orange-500',
+      colorTo: 'orange-600'
+    },
+    { 
+      name: 'Google Cloud', 
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+      colorFrom: 'blue-500',
+      colorTo: 'red-500'
+    },
     { 
       name: 'Firebase', 
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
@@ -149,6 +173,12 @@ export class Skills {
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
       colorFrom: 'purple-500',
       colorTo: 'pink-600'
-    }
+    },
+    { 
+    name: 'Capacitor', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/capacitor/capacitor-original.svg',
+    colorFrom: 'blue-500',
+    colorTo: 'purple-600'
+    },
   ];
 }

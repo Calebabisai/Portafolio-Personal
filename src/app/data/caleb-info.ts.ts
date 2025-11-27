@@ -16,8 +16,9 @@ de la industria e integro modelos de IA para crear experiencias más inteligente
     lenguajes: ['TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS'],
     frontend: ['Angular', 'React', 'Tailwind CSS', 'Responsive Design', 'UI/UX'],
     backend: ['Node.js', 'Firebase', 'APIs REST'],
-    herramientas: ['Git', 'GitHub', 'Bitbucket', 'npm', 'VS Code', 'Slack', 'Ionic'],
-    bases_datos: ['Firebase Firestore', 'Firebase Realtime Database'],
+    herramientas: ['Git', 'GitHub', 'Bitbucket', 'npm', 'VS Code', 'Slack', 'Ionic', 'Capacitor'],
+    cloud: ['Firebase', 'AWS', 'Google Cloud'],
+    bases_datos: ['Firebase Firestore', 'Firebase Realtime Database','SQL'],
     ia: ['Gemini API', 'Firebase Genkit', 'Firebase AI Logic', 'Chatbots', 'Asistentes Automatizados'],
     soft_skills: [
       'Trabajo en equipo',
