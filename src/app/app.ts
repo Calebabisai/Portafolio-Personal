@@ -7,6 +7,8 @@ import { Skills } from "./pages/skills/skills";
 import { Projects } from "./pages/projects/projects";
 import { About } from "./pages/about/about";
 import { Home } from "./pages/home/home";
+import { Chatbot } from './components/chatbot/chatbot/chatbot';
+
 
 
 /**
@@ -44,6 +46,7 @@ import { Home } from "./pages/home/home";
     Courses,
     Skills,
     Contact,
+    Chatbot,
     
 ],
   templateUrl: './app.html',

@@ -1,0 +1,82 @@
+<div class="chatbot-container" [class.open]="isOpen">
+      <!-- Botón flotante -->
+  <button class="chatbot-toggle" (click)="toggleChat()" title="Abrir chat">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+    </svg>
+  </button>
+
+  <!-- Ventana del chatbot -->
+   @if (isOpen) {
+    <div class="chat-window">
+      
+      <!-- Header -->
+      <div class="chat-header">
+        <h3>Chatbot Caleb</h3>
+        <button (click)="toggleChat()" class="close-btn" title="Cerrar">
+          ✕
+        </button>
+      </div>
+
+      <!-- Mensajes -->
+      <div class="messages-container" #messagesContainer>
+        
+        <!-- Mensaje inicial (si no hay mensajes) -->
+        @if (messages().length === 0) {
+          <div class="message bot-message">
+            <p>¡Hola! Un gusto tenerte aqui, Puedes preguntarme sobre proyectos, cursos, habilidades y más.</p>
+          </div>
+        }
+
+        <!-- Mostrar cada mensaje -->
+        @for (message of messages(); track message.id) {
+          <div [class]="'message ' + (message.sender === 'user' ? 'user-message' : 'bot-message')">
+            <p>{{ message.text }}</p>
+            <span class="timestamp">{{ message.timestamp | date:'short' }}</span>
+          </div>
+        }
+
+        <!-- Loading -->
+        @if (isLoading()) {
+          <div class="message bot-message">
+            <div class="typing-indicator">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        }
+
+      </div>
+
+      <!-- Input -->
+      <div class="chat-input-container">
+        <input 
+          type="text"
+          [(ngModel)]="messageInput"
+          (keydown.enter)="sendMessage()"
+          placeholder="Escribe tu pregunta..."
+          class="chat-input"
+        />
+        <button 
+          (click)="sendMessage()"
+          [disabled]="!messageInput.trim()"
+          class="send-btn"
+          title="Enviar"
+        >
+          📤
+        </button>
+      </div>
+
+      <!-- Clear button -->
+      @if (messages().length > 0) {
+        <button (click)="clearChat()" class="clear-btn">
+          Limpiar chat
+        </button>
+      }
+
+    </div>
+  }
+
+</div>
+

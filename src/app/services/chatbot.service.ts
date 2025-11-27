@@ -54,7 +54,7 @@ export class ChatbotService {
   /**
    * Obtener estado de carga 
    */
-  getIsLoadin() {
+  getIsLoading() {
     return this.isLoading
   }
 
