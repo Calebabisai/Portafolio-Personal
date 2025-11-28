@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 import { CALEB_INFO } from '../data/caleb-info.ts';
 
 @Injectable({
