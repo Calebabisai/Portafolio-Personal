@@ -3,7 +3,7 @@
   publish = "dist/Portafolio-Personal/browser"
 
 [build.environment]
-  seCRETS_SCAN_OMIT_KEYS = "NG_APP_GEMINI_KEY"
+  SECRETS_SCAN_ENABLED = "false"
 
 [[redirects]]
   from = "/*"
