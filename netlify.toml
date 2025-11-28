@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "dist/Portafolio-Personal/browser"
 
+[build.environment]
+  secrets_scan_omit_keys = "NG_APP_GEMINI_KEY"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
