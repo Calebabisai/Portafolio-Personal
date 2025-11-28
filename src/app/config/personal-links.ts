@@ -61,7 +61,7 @@ export const PERSONAL_LINKS = {
       instructor: 'Universidad Interamericana del Desarrollo',
       image: '/assets/courses/Unid-Curso.png', 
       certificateUrl: '#',
-      period: '2021 - 2025'
+      period: '2022 - 2025'
     },
     {
       title: 'Angular Total',
