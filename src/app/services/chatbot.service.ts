@@ -1,3 +1,10 @@
+/**
+ * Servicio para manejar la lógica del chatbot,
+ * incluyendo el almacenamiento de mensajes y la interacción con GeminiService.
+ * Proporciona métodos para agregar mensajes del usuario y del bot,
+ * así como para obtener el historial de mensajes.
+ */
+
 import { inject, Injectable } from '@angular/core';
 import { signal } from '@angular/core';
 import { Message } from '../models/message.model';
