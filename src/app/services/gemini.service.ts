@@ -38,7 +38,7 @@ export class GeminiService {
     /**
      * Selecciona el modelo generativo a utilizar (Gemini 2.5 Flash)
      */
-    this.model = this.genAI.getGenerativeModel({model: 'gemini-2.5-flash'});
+    this.model = this.genAI.getGenerativeModel({model: 'gemini-1.5-flash'});
     /** Inicializa el chat con el modelo seleccionado */
     this.initializeChat();
   }
@@ -80,7 +80,7 @@ export class GeminiService {
         },
       ],
       generatingConfig: {
-        maxOutputTokens: 200,
+        maxOutputTokens: 100,
       }
     });
   }
