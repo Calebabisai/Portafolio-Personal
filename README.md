@@ -32,13 +32,18 @@ Portafolio web profesional desarrollado con Angular 20, diseñado para mostrar p
 ### Core
 - **Angular 20.3.0** - Framework principal con arquitectura standalone
 - **TypeScript 5.9.2** - Lenguaje de programación
-- **RxJS 7.8.0** - Programación reactiva
+- **Node.js** - Run time de JavaScript
 
 ### Estilos
 - **Tailwind CSS 3.4.13** - Framework CSS utility-first
 - **SCSS** - Preprocesador CSS
 - **PostCSS 8.5.6** - Transformación de CSS
 - **Autoprefixer 10.4.22** - Prefijos CSS automáticos
+
+### IA e Integraciones
+- **Google Generative AI 0.24.1** - SDK oficial de Gemini API
+- **Gemini 2.5 Flash** - Modelo de IA generativa
+- **EmailJS 4.4.1** - Servicio de envío de emails
 
 ### Formularios y Email
 - **Angular Forms** - Formularios reactivos
@@ -54,40 +59,57 @@ Portafolio web profesional desarrollado con Angular 20, diseñado para mostrar p
 ```
 Portafolio-Personal/
 ├── public/
-│   └── assets/
-│       ├── courses/           # Imágenes de cursos y certificaciones
-│       ├── projects/          # Capturas de pantalla de proyectos
-│       └── CalebTrevizo.png   # Foto de perfil
+│ └── assets/
+│ ├── courses/ # Imágenes de cursos y certificaciones
+│ ├── projects/ # Capturas de pantalla de proyectos
+│ └── favicon.png # Favicon personalizado
 ├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   └── theme-toggle/  # Componente de cambio de tema
-│   │   ├── config/
-│   │   │   └── personal-links.ts  # Configuración centralizada de enlaces
-│   │   ├── pages/
-│   │   │   ├── about/         # Página Sobre Mí
-│   │   │   ├── contact/       # Página de Contacto con EmailJS
-│   │   │   ├── courses/       # Sección de Cursos
-│   │   │   ├── home/          # Página principal/Hero
-│   │   │   ├── projects/      # Galería de Proyectos
-│   │   │   └── skills/        # Habilidades técnicas
-│   │   ├── services/
-│   │   │   ├── scroll.service.ts      # Servicio de scroll suave
-│   │   │   └── theme-services.ts      # Gestión de tema oscuro/claro
-│   │   ├── shared/
-│   │   │   ├── footer/        # Footer con redes sociales
-│   │   │   └── navbar/        # Navegación con scroll spy
-│   │   ├── app.config.ts      # Configuración de la aplicación
-│   │   ├── app.routes.ts      # Definición de rutas
-│   │   └── app.ts             # Componente raíz
-│   ├── index.html             # HTML principal
-│   ├── main.ts                # Punto de entrada
-│   └── styles.scss            # Estilos globales
-├── angular.json               # Configuración de Angular
-├── tailwind.config.js         # Configuración de Tailwind
-├── tsconfig.json              # Configuración de TypeScript
-├── netlify.toml               # Configuración de Netlify
-└── package.json               # Dependencias y scripts
+│ ├── app/
+│ │ ├── components/
+│ │ │ ├── chatbot/ # Chatbot IA con Gemini
+│ │ │ └── theme-toggle/ # Componente de cambio de tema
+│ │ ├── config/
+│ │ │ ├── i18n.config.ts # Configuración multiidioma
+│ │ │ └── personal-links.ts # Enlaces externos centralizados
+│ │ ├── data/
+│ │ │ └── caleb-info.ts # Información personal para Gemini
+│ │ ├── pages/
+│ │ │ ├── about/ # Página Sobre Mí
+│ │ │ ├── contact/ # Página de Contacto
+│ │ │ ├── courses/ # Sección de Cursos
+│ │ │ ├── home/ # Página principal/Hero
+│ │ │ ├── projects/ # Galería de Proyectos
+│ │ │ └── skills/ # Habilidades técnicas (21 tecnologías)
+│ │ ├── services/
+│ │ │ ├── chatbot.service.ts # Lógica del chatbot
+│ │ │ ├── gemini.service.ts # Integración con Gemini API
+│ │ │ ├── language.service.ts # Gestión de idiomas
+│ │ │ ├── scroll.service.ts # Navegación suave
+│ │ │ └── theme.service.ts # Gestión de temas
+│ │ ├── pipes/
+│ │ │ └── sanitize.pipe.ts # Sanitización de HTML en i18n
+│ │ ├── models/
+│ │ │ └── message.model.ts # Modelo de mensaje para chat
+│ │ ├── shared/
+│ │ │ ├── footer/ # Footer con redes sociales
+│ │ │ └── navbar/ # Navegación con scroll spy
+│ │ ├── app.config.ts # Configuración de la aplicación
+│ │ ├── app.routes.ts # Definición de rutas
+│ │ └── app.ts # Componente raíz
+│ ├── environments/ # Configuración por entorno
+│ │ ├── environment.ts # Desarrollo (no se sube a GitHub)
+│ │ └── environment.prod.ts # Producción (Netlify)
+│ ├── index.html # HTML principal
+│ ├── main.ts # Punto de entrada
+│ ├── styles.scss # Estilos globales con animaciones
+│ └── env.d.ts # Tipos TypeScript para variables
+├── angular.json # Configuración de Angular con fileReplacements
+├── tailwind.config.js # Configuración de Tailwind v4
+├── postcss.config.js # Configuración de PostCSS
+├── tsconfig.json # Configuración de TypeScript
+├── netlify.toml # Configuración de Netlify
+├── set-env.js # Script de inyección de variables
+└── package.json # Dependencias y scripts
 ```
 
 ## Instalación
@@ -123,7 +145,7 @@ Iniciar servidor de desarrollo:
 npm start
 ```
 
-La aplicación estará disponible en `http://localhost:4200/`
+La aplicación estará disponible en `http://localhost:4100/`
 
 ### Modo de observación
 ```bash
@@ -228,6 +250,19 @@ Footer con enlaces a redes sociales y derechos de autor.
 Botón animado para cambiar entre modo oscuro y claro.
 
 ## Servicios
+
+### geminiServices
+Integración con Google Generative AI para el chatbot:
+// Inicializa Gemini con API key del environment
+constructor() {
+  this.genAI = new GoogleGenerativeAI(apiKey);
+  this.model = this.genAI.getGenerativeModel({model: 'gemini-2.5-flash'});
+  this.initializeChat();
+}
+
+// Envía mensaje y obtiene respuesta
+async sendMessage(userMessage: string): Promise<string>
+
 
 ### ThemeServices
 Gestiona el tema de la aplicación (oscuro/claro):
