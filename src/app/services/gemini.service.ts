@@ -36,9 +36,9 @@ export class GeminiService {
      */
     this.genAI = new GoogleGenerativeAI(apiKey);
     /**
-     * Selecciona el modelo generativo a utilizar (Gemini 2.5 Flash)
+     * Selecciona el modelo generativo a utilizar (Gemini 2.0 Flash-Lite)
      */
-    this.model = this.genAI.getGenerativeModel({model: 'gemini-2.5-flash'});
+    this.model = this.genAI.getGenerativeModel({model: 'gemini-2.0-flash-lite'});
     /** Inicializa el chat con el modelo seleccionado */
     this.initializeChat();
   }
