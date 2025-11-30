@@ -80,7 +80,7 @@ export class GeminiService {
         },
       ],
       generatingConfig: {
-        maxOutputTokens: 100,
+        maxOutputTokens: 150,
       }
     });
   }
