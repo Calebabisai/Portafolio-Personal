@@ -24,10 +24,6 @@ export class ChatbotService {
    */
   private geminiService = inject(GeminiService);
 
-  constructor(){
-    console.log('Chatbot Service Inicializado')
-  }
-
   /**
    * Agregar un nuevo mensaje (del usuario)
    */

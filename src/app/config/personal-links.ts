@@ -1,3 +1,4 @@
+import { Title } from "@angular/platform-browser";
 
 
 export const PERSONAL_LINKS = {
@@ -82,6 +83,13 @@ export const PERSONAL_LINKS = {
       instructor: 'Google',
       image: '/assets/courses/googlecourseia.png', 
       certificateUrl: 'https://www.coursera.org/account/accomplishments/verify/W6J37L68ORN2',
+      period: '2025'
+    },
+    {
+      title: 'Meta Front-End Developer',
+      instructor: 'Meta',
+      image: '/assets/courses/metaCurso.png',
+      certificateUrl: 'https://www.coursera.org/account/accomplishments/verify/BP83SWZ75A2Q',
       period: '2025'
     },
   ],

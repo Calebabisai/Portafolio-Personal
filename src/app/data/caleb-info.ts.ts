@@ -122,7 +122,15 @@ de la industria e integro modelos de IA para crear experiencias más inteligente
       estado: 'Completado',
       duracion: 'Completo',
       area: 'Herramientas de IA, productividad y automatización'
+    },
+    {
+      nombre: 'Meta Front-End Developer',
+      proveedor: 'Coursera/Meta',
+      estado: 'Completo',
+      duracion: 'Completo',
+      area: 'Desarrollo Frontend, React, accesibilidad, testing'
     }
+
   ],
 
   disponibilidad: {

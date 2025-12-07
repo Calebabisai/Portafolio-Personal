@@ -19,3 +19,5 @@ export class Courses {
   links = PERSONAL_LINKS
   readonly languageService = inject(LanguageService);
 }
+  
+
