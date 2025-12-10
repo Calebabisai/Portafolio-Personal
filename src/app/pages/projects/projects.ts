@@ -44,7 +44,7 @@ export class Projects {
       'catalogo-peliculas': '/assets/projects/catalogopeliculas.png',
       'shopping-list': '/assets/projects/Shoppinglist-app.png',
       'todo-list': '/assets/projects/todolist.png',
-      'dashboard': '/assets/projects/dashboard.png'
+      'Zyphboard': '/assets/projects/projectZyphboard.png'
     };
     return images[projectId] || '/assets/projects/default.png';
   }
@@ -59,7 +59,7 @@ export class Projects {
       'catalogo-peliculas': ['Angular', 'TypeScript', 'SCSS'],
       'shopping-list': ['Angular', 'TypeScript', 'Tailwind'],
       'todo-list': ['Angular', 'TypeScript', 'CSS'],
-      'dashboard': ['Angular', 'TypeScript', 'CSS']
+      'Zyphboard': ['Angular', 'TypeScript', 'Tailwind']
     };
     return techs[projectId] || [];
   }
@@ -95,7 +95,7 @@ export class Projects {
         return type === 'demo' ? links.project4.demo : links.project4.github;
       case 'todo-list':
         return type === 'demo' ? links.project5.demo : links.project5.github;
-      case 'dashboard':
+      case 'Zyphboard':
         return type === 'demo' ? links.project6.demo : links.project6.github;
       default:
         return '#';

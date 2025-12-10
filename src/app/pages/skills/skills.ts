@@ -114,6 +114,12 @@ export class Skills {
       colorFrom: 'red-500',
       colorTo: 'red-700'
     },
+        { 
+      name: 'Bun', 
+      icon: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@latest/icons/bun.svg',
+      colorFrom: 'amber-400',
+      colorTo: 'amber-600'
+    },
     { 
       name: 'GitHub', 
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',

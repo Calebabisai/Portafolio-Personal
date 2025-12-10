@@ -1,6 +1,3 @@
-import { Title } from "@angular/platform-browser";
-
-
 export const PERSONAL_LINKS = {
 
   // REDES SOCIALES Y PERFILES PROFESIONALES
@@ -48,7 +45,7 @@ export const PERSONAL_LINKS = {
     //Proyecto 6: Dashboard interactivo
     project6: {
       demo: 'https://dashboardcaleb.netlify.app/',        
-      github: 'https://github.com/Calebabisai/dashboard-test-curso',    
+      github: 'https://github.com/Calebabisai/Zyphboard',    
     },
   },
   

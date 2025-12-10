@@ -65,7 +65,7 @@ export const translations = {
           descripcion: 'Aplicación web para asignar tareas a los usuarios, editarlas y eliminarlas completamente. Usando localStorage.'
         },
         {
-          id: 'dashboard',
+          id: 'Zyphboard',
           titulo: 'Dashboard interactivo',
           descripcion: 'Dashboard interactivo que marca las conexiones y desconexiones del servidor. Diseño funcional y reactivo.'
         }
@@ -210,7 +210,7 @@ export const translations = {
           descripcion: 'Web application to assign tasks to users, edit them and delete them completely. Using localStorage.'
         },
         {
-          id: 'dashboard',
+          id: 'Zyphboard',
           titulo: 'Interactive Dashboard',
           descripcion: 'Interactive dashboard that marks server connections and disconnections. Functional and reactive design.'
         }
